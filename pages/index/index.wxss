@@ -1,0 +1,151 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+page{
+  background: #EDEDED;
+}
+.top{
+  width: 100%;
+  height: 240px;
+  background: #4877f3;
+  color: #FFF;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.top-con{
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.top-hidden{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.bottom{
+  width: 100%;
+  height: 1200rpx;
+  background: #efefef;
+  margin-top: 240px;
+  z-index: 100;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.bottom swiper{
+  height: 100%;
+}
+.bottom swiper-item{
+  background: #efefef;
+  border-right: 1rpx solid #efefef;
+}
+
+/*tab*/
+.tab-title{
+  display: flex; 
+  background: #FFF;
+  position: relative;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #999;
+}
+.tab-title::after{
+  content: '';
+  height: 2rpx;
+  background: #efefef;
+  width: 86.66667%;
+  position: absolute;
+  bottom: 0;
+  left: 6.6666%;
+}
+.tab-title__cell{
+  width: 50%;
+  padding: 20rpx 0;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+}
+.tab-title__cell:active{
+  background: #f8f8f8;
+}
+.tab-title__cell.active{
+  color: #4877f3;
+}
+.tab-title__dot{
+  position: absolute;
+  width: 20%;
+  height: 4rpx;
+  background: #4877f3;
+  bottom: 0;
+  left: 6.666%;
+  transition:all .3s ease-in-out;
+  z-index: 100;
+}
+
+/*list*/
+.list{
+  background: #FFF;
+  padding: 30rpx 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  position: relative;
+  padding-right: 100rpx;
+  font-size: 32rpx;
+}
+.list:active{
+  background: #f8f8f8;
+}
+.list::after{
+  content: '';
+  width: 100%;
+  display: block;
+  height: 2rpx;
+  background: #efefef;
+  position: absolute;
+  bottom: 0rpx;
+  left: 20rpx;
+}
+.list:last-child::after{
+  background: #FFF;
+}
+.list mycheckbox{
+  position: absolute;
+  right: 40rpx;
+}
+.list-time{
+  width: 120rpx;
+  display: inline-block;
+  font-weight: blod;
+}
+.list-time.status0{
+  color: #999;
+}
+.list-time.status1{
+  color: #4e76f4;
+}
+.list-text.status0{
+  color: #c6c6c6;
+  text-decoration: line-through;
+}
+.list-text.status1{
+  color: #333;
+}

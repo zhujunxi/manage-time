@@ -1,0 +1,58 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class="top">
+    <view class="top-con">
+        深圳
+      <view class="top-hidden">  
+        更多天气信息
+      </view>  
+    </view>
+  </view>
+
+  <view class="bottom" style="height:{{listHeight}}px">
+    <view class="tab-title">
+      <view class="tab-title__cell {{swiperIndex == 0?'active':''}}" data-index="0" bindtap="changeIndex">全部</view>
+      <view class="tab-title__cell {{swiperIndex == 1?'active':''}}" data-index="1" bindtap="changeIndex">待办</view>
+      <view class="tab-title__cell {{swiperIndex == 2?'active':''}}" data-index="2" bindtap="changeIndex">归档</view>
+      <view class="tab-title__dot" style="transform: translateX({{swiperIndex*166}}%);"></view>
+    </view>
+    
+    <swiper bindchange="swiperChange" current="{{swiperIndex}}" duration="300" style="height:{{listHeight-45}}px">
+      <swiper-item>
+          <view class="list" wx:for="{{listData}}" data-index="{{index}}" bindtap="handle">
+            <mycheckbox class="{{item.status == 0?'active':''}}"></mycheckbox>
+            <text class="list-time status{{item.status}}">{{item.time}}</text>
+            <text class="list-text status{{item.status}}">{{item.text}}</text>
+          </view>
+      </swiper-item>
+      <swiper-item>
+          <view class="list" wx:for="{{listData}}" wx:if="{{item.status == 1?true:false}}" data-index="{{index}}" bindtap="handle">
+            <mycheckbox class="{{item.status == 0?'active':''}}"></mycheckbox>
+            <text class="list-time status{{item.status}}">{{item.time}}</text>
+            <text class="list-text status{{item.status}}">{{item.text}}</text>
+          </view>
+      </swiper-item>
+      <swiper-item>
+          <view class="list" wx:for="{{listData}}" wx:if="{{item.status == 0?true:false}}" data-index="{{index}}" bindtap="handle">
+            <mycheckbox class="{{item.status == 0?'active':''}}"></mycheckbox>
+            <text class="list-time status{{item.status}}">{{item.time}}</text>
+            <text class="list-text status{{item.status}}">{{item.text}}</text>
+          </view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+
+  <!-- <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+
+  <view class="classname" wx:for="{{dateList}}">
+    {{item}}
+  </view> -->
+</view>
